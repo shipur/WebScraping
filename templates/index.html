@@ -18,8 +18,8 @@
     <div>
       <ul style="list-style: none;">
         {% for key, value in findings.items(): %}
-          <li>{{ key }} </li>
-          <li><img src= "{{ value }}" height="42" width="42"></li>
+          <li>{{ key }} : {{value}}</li>
+          <!-- <li><img src= "{{ value }}" height="42" width="42"></li> -->
         {% endfor %}
       </ul>
     </div>
