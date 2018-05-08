@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Findings</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container text-center">
+    <h1 class="jumbotron">Mars findings</h1>
+    <div class="jumbotron text-center">
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape new data</a></p>
+    </div>
+    <div>
+      <ul style="list-style: none;">
+        {% for key, value in findings.items(): %}
+          <li>{{ key }} </li>
+          <li><img src= "{{ value }}" height="42" width="42"></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+</html>
