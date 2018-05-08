@@ -41,14 +41,14 @@ news_text
 #Add this value to the main dictionary:
 combined_dict['newsParagraph'] = news_text
 
-url = 'https://www.jpl.nasa.gov/spaceimages/details.php?id=PIA20465'
+url = 'https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA16225_hires.jpg'
 browser.visit(url)
 
 html = browser.html
 soup = BeautifulSoup(html, 'html.parser')
 
-featured_image = soup.find('figure', class_="lede").img
-featured_image_url = featured_image['src']
+featured_image_url = soup.find('img')['src']
+#featured_image_url = featured_image['src']
 
 #Add this value to a dictionary:
 combined_dict['featuredImage'] = featured_image_url
@@ -97,6 +97,10 @@ for description in hemisphere_descriptions:
     titles.append(hemisphere_title)
     print(hemisphere_title)
 
+# The following are two parts to the url we are going to create for the hemisphere images:
+url_part1 = 'https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/'
+url_part3 = '.tif/full.jpg'
+
 url = 'https://astrogeology.usgs.gov/search/map/Mars/Viking/cerberus_enhanced?open=true'
 browser.visit(url)
 
@@ -108,8 +112,7 @@ imageSrc = soup.find('img',class_='wide-image')['src']
 #Add this url to the original image url list:
 image_urls.append(imageSrc)
 
-#Add this value to a dictionary:
-combined_dict['url_1'] = imageSrc
+
 
 #--------------
 # Add the above image urls and the hemisphere names to the list of dictionaries.
@@ -117,6 +120,17 @@ dict_temp['title'] = titles[0]
 dict_temp['image_url'] = imageSrc
 
 dictList_image_urls.append(dict_temp.copy())
+
+#extracting and making an image url:
+url_temp = imageSrc.split("_",1)[1]
+url_part2 = url_temp.split(".",1)[0]
+new_url = url_part1+url_part2+url_part3
+print(url_part2)
+print(new_url)
+
+#Add this value to a dictionary:
+#combined_dict['url_1'] = imageSrc
+combined_dict['url_1'] = new_url
 
 url = 'https://astrogeology.usgs.gov/search/map/Mars/Viking/schiaparelli_enhanced'
 browser.visit(url)
@@ -129,8 +143,7 @@ imageSrc = soup.find('img',class_='wide-image')['src']
 #Add this url to the original image url list:
 image_urls.append(imageSrc)
 
-#Add this value to a dictionary:
-combined_dict['url_2'] = imageSrc
+
 
 #--------------
 # Add the above image urls and the hemisphere names to the list of dictionaries.
@@ -138,6 +151,17 @@ dict_temp['title'] = titles[1]
 dict_temp['image_url'] = imageSrc
 
 dictList_image_urls.append(dict_temp.copy())
+
+#extracting and making an image url:
+url_temp = imageSrc.split("_",1)[1]
+url_part2 = url_temp.split(".",1)[0]
+new_url = url_part1+url_part2+url_part3
+print(url_part2)
+print(new_url)
+
+#Add this value to a dictionary:
+#combined_dict['url_1'] = imageSrc
+combined_dict['url_1'] = new_url
 
 url = 'https://astrogeology.usgs.gov/search/map/Mars/Viking/syrtis_major_enhanced'
 browser.visit(url)
@@ -150,8 +174,7 @@ imageSrc = soup.find('img',class_='wide-image')['src']
 #Add this url to the original image url list:
 image_urls.append(imageSrc)
 
-#Add this value to a dictionary:
-combined_dict['url_3'] = imageSrc
+
 
 #--------------
 # Add the above image urls and the hemisphere names to the list of dictionaries.
@@ -159,6 +182,17 @@ dict_temp['title'] = titles[2]
 dict_temp['image_url'] = imageSrc
 
 dictList_image_urls.append(dict_temp.copy())
+
+#extracting and making an image url:
+url_temp = imageSrc.split("_",1)[1]
+url_part2 = url_temp.split(".",1)[0]
+new_url = url_part1+url_part2+url_part3
+print(url_part2)
+print(new_url)
+
+#Add this value to a dictionary:
+#combined_dict['url_1'] = imageSrc
+combined_dict['url_1'] = new_url
 
 url = 'https://astrogeology.usgs.gov/search/map/Mars/Viking/valles_marineris_enhanced'
 browser.visit(url)
@@ -171,8 +205,7 @@ imageSrc = soup.find('img',class_='wide-image')['src']
 #Add this url to the original image url list:
 image_urls.append(imageSrc)
 
-#Add this value to a dictionary:
-combined_dict['url_4'] = imageSrc
+
 
 #--------------
 # Add the above image urls and the hemisphere names to the list of dictionaries.
@@ -181,6 +214,17 @@ dict_temp['title'] = titles[3]
 dict_temp['image_url'] = imageSrc
 
 dictList_image_urls.append(dict_temp.copy())
+
+#extracting and making an image url:
+url_temp = imageSrc.split("_",1)[1]
+url_part2 = url_temp.split(".",1)[0]
+new_url = url_part1+url_part2+url_part3
+print(url_part2)
+print(new_url)
+
+#Add this value to a dictionary:
+#combined_dict['url_1'] = imageSrc
+combined_dict['url_1'] = new_url
 
 # Print the resulting List of Dictionaries containing Mars hemisphere titles and the associated image url:
 from pprint import pprint

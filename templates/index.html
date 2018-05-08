@@ -17,11 +17,40 @@
     </div>
     <div>
       <ul style="list-style: none;">
-        {% for key, value in findings.items(): %}
-          <li>{{ key }} : {{value}}</li>
+        <!-- {% for key, value in findings.items(): %} -->
+          <!-- <li>{{ key }} : {{value}}</li> -->
           <!-- <li><img src= "{{ value }}" height="42" width="42"></li> -->
-        {% endfor %}
+        <!-- {% endfor %} -->
+        <li><h4>{{findings['newsTitle']}}</h4></li><br>
+        <li><p>{{findings['newsParagraph']}}<p></li>
+        <li><h4>Featured Mars Image</h4></li><br>
+        <!-- <li><img src= "{{findings['featuredImage']}}" height="300" width="450"></li><br><br> -->
+        <li><img src="https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA16225_hires.jpg" height="300" width="450"></li><br><br> 
+        <li><h5>Mars Weather</h5></li><br>
+        <li><p>{{findings['twitterMarsWeather']}}<p></li>
       </ul>
+      <!-- <div>{{findings['marsFactsHTML']}}</div><br><br><br> -->
+      
+      <table border=1>
+        <caption><h3>Mars Hemispheres</h3></caption>
+        <tr>
+          <th>{{findings['Cerberus Hemisphere Enhanced']}}</th>
+          <th>{{findings['Schiaparelli Hemisphere Enhanced']}}</th>
+          <th>{{findings['Syrtis Major Hemisphere Enhanced']}}</th>
+          <th>{{findings['Valles Marineris Hemisphere Enhanced']}}</th>
+        </tr>
+        <tr>
+          <td><img src= "https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/cerberus_enhanced.tif/full.jpg" height="300" width="300"></td>
+          <td><img src= "https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/schiaparelli_enhanced.tif/full.jpg" height="300" width="300"></td>
+          <td><img src= "https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/syrtis_major_enhanced.tif/full.jpg" height="300" width="300"></td>
+          <td><img src= "https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/valles_marineris_enhanced.tif/full.jpg" height="300" width="300"></td>
+
+          <!-- <td><img src= "{{findings['url_1']}}" height="300" width="300"></td>
+          <td><img src= "{{findings['url_2']}}" height="300" width="300"></td>
+          <td><img src= "{{findings['url_3']}}" height="300" width="300"></td>
+          <td><img src= "{{findings['url_4']}}" height="300" width="300"></td> -->
+        </tr>
+      </table><br><br><br>
     </div>
   </div>
 
