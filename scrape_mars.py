@@ -161,7 +161,7 @@ print(new_url)
 
 #Add this value to a dictionary:
 #combined_dict['url_1'] = imageSrc
-combined_dict['url_1'] = new_url
+combined_dict['url_2'] = new_url
 
 url = 'https://astrogeology.usgs.gov/search/map/Mars/Viking/syrtis_major_enhanced'
 browser.visit(url)
@@ -192,7 +192,7 @@ print(new_url)
 
 #Add this value to a dictionary:
 #combined_dict['url_1'] = imageSrc
-combined_dict['url_1'] = new_url
+combined_dict['url_3'] = new_url
 
 url = 'https://astrogeology.usgs.gov/search/map/Mars/Viking/valles_marineris_enhanced'
 browser.visit(url)
@@ -224,7 +224,7 @@ print(new_url)
 
 #Add this value to a dictionary:
 #combined_dict['url_1'] = imageSrc
-combined_dict['url_1'] = new_url
+combined_dict['url_4'] = new_url
 
 # Print the resulting List of Dictionaries containing Mars hemisphere titles and the associated image url:
 from pprint import pprint
