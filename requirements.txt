@@ -27,3 +27,4 @@ gunicorn==19.7.1
 beautifulsoup4==4.6.0
 selenium==3.11.0
 splinter==0.8.0
+pymongo==3.6.1
